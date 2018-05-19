@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Rodeo Calendar</title>
+  </head>
+  <body>
+      <p>Rodeo Calendar</p>
+      <div id="app"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+      <script type="text/babel">
+        class Calendar extends React.Component{
+          constructor(props){
+            super(props);
+            this.state ={
+              rodeos : 5
+            }
+          }
+          render(){
+            return(
+              <div>
+                <h1>Rodeo Calendar</h1>
+                <p>Todays date is {this.props.date.toLocaleDateString()}</p>
+                <h2>There are {this.state.rodeos} rodeos this week. Check them all out on the calendar</h2>
+              </div>
+            );
+          }
+        }
+        const info = {
+          todaysDate: new Date(),
+        }
+        ReactDOM.render(
+          <Calendar
+          date={info.todaysDate}/>, document.getElementById('app')
+        );
+      </script>
+  </body>
+</html>
