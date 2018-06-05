@@ -32,8 +32,8 @@ class App extends Component {
   }
 
   deleteTodo(index){
-    const remainingTodos = this.state.todos.filter((todo, remainingTodos) => {
-      return (todo.index !==remainingTodos.index)
+    const remainingTodos = this.state.todos.filter((todo) => {
+      return (todo !==this.state.todos[index])
     } )
     this.setState({todos : remainingTodos })
   }
